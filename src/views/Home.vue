@@ -14,7 +14,9 @@
 
     <p>
       To verify this behavior, open up your browser's Developer Tools (usually
-      accessible via the F12 key), and view the "Network" tab.</p>
+      accessible via the F12 key), and view the "Network" tab:</p>
+
+    <img alt="Stripe requests in Chrome network tab" style="border: 1px solid grey; max-width: 100%" src="../assets/stripe-network-tab.png">
       
     <p>You should see the app generate new requests to the URL
       <span class="code">https://m.stripe.com/4</span> every time you view a

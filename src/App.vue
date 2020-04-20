@@ -38,6 +38,10 @@ p {
   margin-right: auto;
 }
 
+a {
+  text-decoration: none;
+}
+
 .code {
   font-family: 'Courier New', Courier, monospace;
   font-size: 11pt;
