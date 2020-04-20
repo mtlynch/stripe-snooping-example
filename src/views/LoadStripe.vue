@@ -11,17 +11,29 @@
 </template>
 
 <script>
-// Import the loadStripe function from the stripe-js library. Note that we
-// never call the loadStripe function; we only save the function pointer.
-// Nevertheless, Stripe loads in the background and reports user behavior to
-// the Stripe server at https://m.stripe.com/4.
-import { loadStripe } from '@stripe/stripe-js';
+// Import loadStripe using the /pure import path so that the import has no side
+// effects.
+import { loadStripe } from '@stripe/stripe-js/pure';
+
+// Replace this with your app's Stripe publishable key.
+const STRIPE_PUBLISHABLE_KEY = 'pk_test_TYooMQauvdEDq54NiTphI7jx';
 
 export default {
   data: function() {
     return {
-      loadStripe: loadStripe
+      stripe: null,
     };
   },
+  mounted() {
+    loadStripe(STRIPE_PUBLISHABLE_KEY).then(stripe => {
+      this.stripe = stripe;
+      // TODO: Use the Stripe library here.
+    });
+  },
+  beforeRouteLeave(to) {
+    // Force an HTTP request instead of a JavaScript route change because we need
+    // a new page load that does *not* import Stripe.
+    window.location.replace(to.path);
+  }
 };
 </script>
