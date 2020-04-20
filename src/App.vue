@@ -3,9 +3,10 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/stripe">Load stripe</router-link>
+      <router-link to="/stripe">Load stripe</router-link> |
+      <a href="https://github.com/mtlynch/stripe-snooping-example">Github</a>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -29,5 +30,16 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+p {
+  max-width: 70ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11pt;
 }
 </style>

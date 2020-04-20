@@ -11,6 +11,10 @@
 </template>
 
 <script>
+// Import the loadStripe function from the stripe-js library. Note that we
+// never call the loadStripe function; we only save the function pointer.
+// Nevertheless, Stripe loads in the background and reports user behavior to
+// the Stripe server at https://m.stripe.com/4.
 import { loadStripe } from '@stripe/stripe-js';
 
 export default {
@@ -21,9 +25,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.code {
-  font-family: 'Courier New', Courier, monospace;
-}
-</style>
